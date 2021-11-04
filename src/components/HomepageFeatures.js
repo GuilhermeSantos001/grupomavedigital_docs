@@ -1,6 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './HomepageFeatures.module.css';
+import useThemeContext from '@theme/hooks/useThemeContext';
 
 const FeatureList = [
   {
@@ -56,12 +57,14 @@ function Feature({ Svg, title, description }) {
 }
 
 export default function HomepageFeatures() {
+  const { isDarkTheme } = useThemeContext();
+
   return (
     <section className={styles.features}>
       <div className="container">
         <div className="row">
           {FeatureList.map((props, idx) =>
-            document.getElementsByTagName('html').item(0).dataset['theme'] === 'dark' ? (
+            isDarkTheme ? (
               <Feature key={idx} {...props} Svg={props.Svg.dark} />
             ) : (
               <Feature key={idx} {...props} Svg={props.Svg.light} />
