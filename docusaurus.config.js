@@ -1,13 +1,13 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require("prism-react-renderer/themes/duotoneLight");
+const lightCodeTheme = require("prism-react-renderer/themes/oceanicNext");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Grupo Mave Digital",
-  tagline: "documentação oficial",
+  tagline: "Ambiente Digital Interativo",
   url: "https://grupomavedigital.com.br",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -15,6 +15,10 @@ const config = {
   favicon: "img/favicon.ico",
   organizationName: "GuilhermeSantos001", // Usually your GitHub org/user name.
   projectName: "grupomavedigital_docs", // Usually your repo name.
+
+  plugins: [
+    'docusaurus-plugin-sass'
+  ],
 
   presets: [
     [
@@ -32,9 +36,13 @@ const config = {
           // Please change this to your repo.
           editUrl:
             "https://github.com/GuilhermeSantos001/grupomavedigital_docs/edit/main/blog/",
+          blogTitle: 'GMD Blog',
+          blogDescription: 'Blog oficial do Grupo Mave Digital'
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: [
+            require.resolve("./src/css/custom.css"),
+          ],
         },
       }),
     ],
@@ -43,6 +51,15 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      hideableSidebar: true,
+      id: 'support_us',
+      announcementBar: {
+        content:
+          'A documentação a seguir foi realizada por programadores para programadores. <a target="_blank" rel="noopener noreferrer" href="https://grupomavedigital.com.br">Enviar Feedback</a>',
+        backgroundColor: '#fafbfc',
+        textColor: '#004a6e',
+        isCloseable: false
+      },
       navbar: {
         title: "Digital",
         logo: {
@@ -52,72 +69,40 @@ const config = {
         },
         items: [
           {
-            type: "doc",
-            docId: "intro",
-            position: "left",
-            label: "Tutorial",
-          },
-          {
             type: "docsVersionDropdown",
           },
-          { to: "/blog", label: "Blog", position: "left" },
           {
-            href: "https://github.com/facebook/docusaurus",
+            type: "doc",
+            docId: "introduction",
+            position: "left",
+            label: "Começando do Zero",
+          },
+          {
+            to: "/blog",
+            label: "Blog",
+            position: "right",
+          },
+          {
+            to: "/community",
+            label: "Guia da Comunidade",
+            position: "right",
+          },
+          {
+            href: "https://github.com/GuilhermeSantos001/grupomavedigital_docs",
             label: "GitHub",
             position: "right",
           },
         ],
       },
       footer: {
-        style: "dark",
-        links: [
-          {
-            title: "Docs",
-            items: [
-              {
-                label: "Tutorial",
-                to: "/docs/intro",
-              },
-            ],
-          },
-          {
-            title: "Community",
-            items: [
-              {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-              },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
-              },
-            ],
-          },
-          {
-            title: "More",
-            items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        style: "light",
+        copyright: `Grupo Mave 2020-2021 © Todos direitos reservados. Construído com <a target="_blank" rel="noopener noreferrer" href="https://docusaurus.io/" style="color: green;">Docusaurus</a>. Hospedado por <a target="_blank" rel="noopener noreferrer" href="https://vercel.com/" style="color: blue;">Vercel</a>.`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
-    }),
+    })
 };
 
 module.exports = config;

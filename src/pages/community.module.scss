@@ -1,0 +1,39 @@
+.main {
+  padding: 12px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #004a6e;
+  font-weight: bold;
+}
+
+p,
+a {
+  padding-left: 12px;
+  padding-right: 12px;
+  text-align: justify;
+}
+
+hr {
+  margin-left: 10vw;
+  margin-right: 10vw;
+  color: rgb(221, 221, 221);
+  opacity: 0.5;
+}
+
+html[data-theme="dark"] {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #f6d816;
+    font-weight: bold;
+  }
+}

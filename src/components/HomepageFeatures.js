@@ -4,38 +4,44 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Aprendizagem',
+    Svg: {
+      light: require('../../static/img/aprendizagem-light.svg').default,
+      dark: require('../../static/img/aprendizagem-dark.svg').default
+    },
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Leia a documentação e aprenda a usar nossa plataforma de forma simples e rápida.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Colaboração',
+    Svg: {
+      light: require('../../static/img/colaboração-light.svg').default,
+      dark: require('../../static/img/colaboração-dark.svg').default
+    },
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Você pode nos ajude a melhorar nossa plataforma através de trabalhos mais complexos ou de forma documental.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
+    title: 'Decolagem',
+    Svg: {
+      light: require('../../static/img/decolagem-light.svg').default,
+      dark: require('../../static/img/decolagem-dark.svg').default
+    },
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Nós temos o objetivo de ajudar você a começar a produzir o mais rapido possível.
       </>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({ Svg, title, description }) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
@@ -54,9 +60,12 @@ export default function HomepageFeatures() {
     <section className={styles.features}>
       <div className="container">
         <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
+          {FeatureList.map((props, idx) =>
+            document.getElementsByTagName('html').item(0).dataset['theme'] === 'dark' ? (
+              <Feature key={idx} {...props} Svg={props.Svg.dark} />
+            ) : (
+              <Feature key={idx} {...props} Svg={props.Svg.light} />
+            ))}
         </div>
       </div>
     </section>
