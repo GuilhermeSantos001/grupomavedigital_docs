@@ -80,6 +80,9 @@ sudo nano /etc/nginx/nginx.conf
 Nesse arquivo vamos adicionar dentro de http, o seguinte:
 
 ```conf title="/etc/nginx/nginx.conf"
+# Define para 20 MB maximo de upload
+client_max_body_size 20M;
+
 log_format main '$remote_addr - $remote_user [$time_local] "request" '
                 '$status $body_bytes_sent "$http_referer" '
                 '"$http_user_agent" "$http_x_forwarded_for"';
@@ -131,6 +134,13 @@ server {
 
    location /graphql {
        proxy_pass http://192.168.0.130:4000/graphql/;
+   }
+
+   location  /api {
+      rewrite /api/(.*) /$1  break;
+      proxy_pass         http://localhost:4000;
+      proxy_redirect     off;
+      proxy_set_header   Host $host;
    }
 
    # error_page 404  /404.html;
