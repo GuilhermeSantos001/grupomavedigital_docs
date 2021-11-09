@@ -143,6 +143,13 @@ server {
       proxy_set_header   Host $host;
    }
 
+   location /_next/webpack-hmr {
+      proxy_pass http://localhost:3000/_next/webpack-hmr;
+      proxy_http_version 1.1;
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection "upgrade";
+   }
+
    # error_page 404  /404.html;
 
    # redirect server error pages to the static page /50x.html
