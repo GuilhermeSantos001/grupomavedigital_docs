@@ -136,8 +136,8 @@ server {
        proxy_pass http://192.168.0.130:4000/graphql/;
    }
 
-   location  /api {
-      rewrite /api/(.*) /$1  break;
+   location  /express {
+      rewrite /express/(.*) /$1  break;
       proxy_pass         http://localhost:4000;
       proxy_redirect     off;
       proxy_set_header   Host $host;
