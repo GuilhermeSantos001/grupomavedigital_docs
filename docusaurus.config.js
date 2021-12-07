@@ -17,7 +17,18 @@ const config = {
   projectName: "grupomavedigital_docs", // Usually your repo name.
 
   plugins: [
-    'docusaurus-plugin-sass'
+    'docusaurus-plugin-sass',
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'api',
+        path: 'docs/api',
+        routeBasePath: 'docs/api',
+        sidebarPath: require.resolve('./sidebarsAPI.js'),
+        editUrl:
+          "https://github.com/GuilhermeSantos001/grupomavedigital_docs/edit/main/",
+      },
+    ],
   ],
 
   presets: [
@@ -26,14 +37,14 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
+          path: 'docs/started',
+          routeBasePath: 'docs/started',
+          sidebarPath: require.resolve('./sidebarsStarted.js'),
           editUrl:
             "https://github.com/GuilhermeSantos001/grupomavedigital_docs/edit/main/",
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
           editUrl:
             "https://github.com/GuilhermeSantos001/grupomavedigital_docs/edit/main/blog/",
           blogTitle: 'GMD Blog',
@@ -55,7 +66,7 @@ const config = {
       id: 'support_us',
       announcementBar: {
         content:
-          'A documentação a seguir foi realizada por programadores para programadores. <a target="_blank" rel="noopener noreferrer" href="https://grupomavedigital.com.br">Enviar Feedback</a>',
+          'A documentação a seguir foi realizada por programadores para programadores. <a target="_blank" rel="noopener noreferrer" href="mailto:suporte@grupomave.com.br?subject=Grupo Mave Digital - Feedback da Documentação&body=Olá, me chamo ... e gostaria de expressar minha opinião sobre a documentação.">Enviar Feedback</a>',
         backgroundColor: '#fafbfc',
         textColor: '#004a6e',
         isCloseable: false
@@ -75,28 +86,39 @@ const config = {
             type: "doc",
             docId: "introduction",
             position: "left",
-            label: "Começando do Zero",
+            label: "API",
+            docsPluginId: 'api',
           },
           {
-            to: "/blog",
-            label: "Blog",
-            position: "right",
+            type: "doc",
+            docId: "introduction",
+            position: "left",
+            label: "Começando do Zero"
           },
           {
-            to: "/community",
-            label: "Guia da Comunidade",
+            type: 'dropdown',
+            label: 'Comunidade',
             position: "right",
-          },
-          {
-            href: "https://github.com/GuilhermeSantos001/grupomavedigital_docs",
-            label: "GitHub",
-            position: "right",
-          },
+            items: [
+              {
+                to: "/community",
+                label: "Guia da Comunidade",
+              },
+              {
+                to: "/blog",
+                label: "Blog",
+              },
+              {
+                href: "https://github.com/GuilhermeSantos001/grupomavedigital_docs",
+                label: "GitHub",
+              },
+            ],
+          }
         ],
       },
       footer: {
         style: "light",
-        copyright: `Grupo Mave 2020-2021 © Todos direitos reservados. Construído com <a target="_blank" rel="noopener noreferrer" href="https://docusaurus.io/" style="color: green;">Docusaurus</a>. Hospedado por <a target="_blank" rel="noopener noreferrer" href="https://vercel.com/" style="color: blue;">Vercel</a>.`,
+        copyright: `Grupo Mave 2020-2021 © Todos direitos reservados. Construído com <a target="_blank" rel="noopener noreferrer" href="https://docusaurus.io/" style="color: green;">Docusaurus</a>. Hospedado por <a target="_blank" rel="noopener noreferrer" href="https://vercel.com/" style="color: green;">Vercel</a>.`,
       },
       prism: {
         theme: lightCodeTheme,

@@ -3,12 +3,19 @@ import clsx from 'clsx';
 import styles from './HomepageFeatures.module.css';
 import useThemeContext from '@theme/hooks/useThemeContext';
 
+import image1_light from '@site/static/img/aprendizagem-light.png';
+import image1_dark from '@site/static/img/aprendizagem-dark.png';
+import image2_light from '@site/static/img/colaboração-light.png';
+import image2_dark from '@site/static/img/colaboração-dark.png';
+import image3_light from '@site/static/img/decolagem-light.png';
+import image3_dark from '@site/static/img/decolagem-dark.png';
+
 const FeatureList = [
   {
     title: 'Aprendizagem',
-    Svg: {
-      light: require('../../static/img/aprendizagem-light.svg').default,
-      dark: require('../../static/img/aprendizagem-dark.svg').default
+    image: {
+      light: image1_light,
+      dark: image1_dark
     },
     description: (
       <>
@@ -18,9 +25,9 @@ const FeatureList = [
   },
   {
     title: 'Colaboração',
-    Svg: {
-      light: require('../../static/img/colaboração-light.svg').default,
-      dark: require('../../static/img/colaboração-dark.svg').default
+    image: {
+      light: image2_light,
+      dark: image2_dark
     },
     description: (
       <>
@@ -30,9 +37,9 @@ const FeatureList = [
   },
   {
     title: 'Decolagem',
-    Svg: {
-      light: require('../../static/img/decolagem-light.svg').default,
-      dark: require('../../static/img/decolagem-dark.svg').default
+    image: {
+      light: image3_light,
+      dark: image3_dark
     },
     description: (
       <>
@@ -42,11 +49,11 @@ const FeatureList = [
   },
 ];
 
-function Feature({ Svg, title, description }) {
+function Feature({ image, title, description }) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} alt={title} />
+        <img src={image} className={styles.featureSvg} alt={title} />
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
@@ -65,9 +72,9 @@ export default function HomepageFeatures() {
         <div className="row">
           {FeatureList.map((props, idx) =>
             isDarkTheme ? (
-              <Feature key={idx} {...props} Svg={props.Svg.dark} />
+              <Feature key={idx} {...props} image={props.image.dark} />
             ) : (
-              <Feature key={idx} {...props} Svg={props.Svg.light} />
+              <Feature key={idx} {...props} image={props.image.light} />
             ))}
         </div>
       </div>
