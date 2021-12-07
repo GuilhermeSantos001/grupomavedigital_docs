@@ -115,7 +115,7 @@ map $http_upgrade $connection_upgrade {
 upstream socket_nodes {
     ip_hash;
     # weight - Define a proporção do tráfego direcionado ao servidor
-    server localhost:5000 weight=5;
+    server 192.168.0.130:4000 weight=5;
     # server other-ip:port;
 }
 
@@ -129,11 +129,11 @@ server {
    # access_log /var/log/nginx/host.access.log main;
 
    location / {
-       proxy_pass http://localhost:3000/;
+       proxy_pass http://192.168.0.130:3000/;
    }
 
    location /graphql {
-       proxy_pass http://localhost:4000/graphql/;
+       proxy_pass http://192.168.0.130:4000/graphql/;
    }
 
    location  /express {
@@ -228,3 +228,4 @@ Sim nós tentamos ao maximo produzir materiais que são uteis para quem usa o WS
 - [Configurando SSL com Nginx](https://www.organicadigital.com/blog/configurando-ssl-com-nginx/)
 - [ERROR: Could not find a profile matching 'Nginx Full'](https://stackoverflow.com/questions/57924093/error-could-not-find-a-profile-matching-nginx-full)
 - [Get user real ip in nginx behind nginx reverse proxy](https://ypereirareis.github.io/blog/2017/02/15/nginx-real-ip-behind-nginx-reverse-proxy/)
+>>>>>>> 1788e406bf326d383b66f3c43a05679d747a8b98:versioned_docs/version-1.0.0/development/introduction.md
