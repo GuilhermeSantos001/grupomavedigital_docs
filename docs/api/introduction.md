@@ -10,21 +10,36 @@ Saiba tudo sobre as atualizações do **Grupo Mave Digital**.
 Estamos trabalhando em uma versão estável, por enquanto o sistema poderá apresentar erros.
 :::
 
-## v0.1.0 - Instável
+## Versão 0.2.4 - Instável
 
-> Atualização em Desenvolvimento
+## Melhorias #1
+
+- Agora os arquivos são exibidos na pagina.
+- Agora os arquivos e pastas da pasta são retornados do backend.
+
+## Notas de Design #1
+
+- Correção no efeito de fade-in/fade-out do componente **DropZone**.
+- Correção do icone da lixeira do componente **DropZone**.
+- Adicionada nova classe para o componente de **Arquivos**.
+
+## Correções #1
+
+- Corrigido bug de duplicação de itens do componente **DropZone**.
+
+## v0.1.0 - Instável
 
 ### Novos arquivos de teste
 
 > Agora o sistema possui novos testes unitários, para que os desenvolvedores possam testar as funcionalidades do sistema com mais facilidade, e para que possam identificar erros, antes de lançar a versão estável.
 
-### Notas de Design
+### Notas de Design #2
 
 - Melhoria no design do menu lateral
 - Melhoria no tempo de animação global
 - Agora os itens do menu lateral podem ser desativados
 
-### Correções
+### Correções #2
 
 - Corrigido erro no servidor **Socket.io**.
 - Corrigido erro de **RegExp** dos caracteres especiais.
