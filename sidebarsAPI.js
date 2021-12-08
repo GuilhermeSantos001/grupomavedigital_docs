@@ -20,6 +20,26 @@ const sidebars = {
       id: "introduction",
     },
     {
+      type: "category",
+      label: "Versões",
+      collapsed: false,
+      collapsible: true,
+      items: [
+        {
+          type: 'doc',
+          id: 'versions/v0.3.4'
+        },
+        {
+          type: 'doc',
+          id: 'versions/v0.2.4'
+        },
+        {
+          type: 'doc',
+          id: 'versions/v0.1.0'
+        }
+      ]
+    },
+    {
       type: "doc",
       id: "server"
     },

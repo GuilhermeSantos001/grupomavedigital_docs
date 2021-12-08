@@ -80,9 +80,6 @@ const config = {
         },
         items: [
           {
-            type: "docsVersionDropdown",
-          },
-          {
             type: "doc",
             docId: "introduction",
             position: "left",
@@ -94,6 +91,10 @@ const config = {
             docId: "introduction",
             position: "left",
             label: "Começando do Zero"
+          },
+          {
+            type: "docsVersionDropdown",
+            position: 'right'
           },
           {
             type: 'dropdown',
