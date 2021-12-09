@@ -94,6 +94,29 @@ const config = {
           },
           {
             type: 'dropdown',
+            label: 'Versões',
+            position: 'right',
+            items: [
+              {
+                to: "/docs/api/versions/v0.4.7",
+                label: "v0.4.7 - Instável",
+              },
+              {
+                to: "/docs/api/versions/v0.3.4",
+                label: "v0.3.4 - Instável",
+              },
+              {
+                to: "/docs/api/versions/v0.2.4",
+                label: "v0.2.4 - Instável",
+              },
+              {
+                to: "/docs/api/versions/v0.1.0",
+                label: "v0.1.0 - Instável",
+              }
+            ]
+          },
+          {
+            type: 'dropdown',
             label: 'Comunidade',
             position: "right",
             items: [

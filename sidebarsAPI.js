@@ -21,7 +21,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Versões",
+      label: "Changelog",
       collapsed: false,
       collapsible: true,
       items: [
