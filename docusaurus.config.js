@@ -93,10 +93,6 @@ const config = {
             label: "Começando do Zero"
           },
           {
-            type: "docsVersionDropdown",
-            position: 'right'
-          },
-          {
             type: 'dropdown',
             label: 'Comunidade',
             position: "right",
