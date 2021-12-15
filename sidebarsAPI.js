@@ -27,6 +27,10 @@ const sidebars = {
       items: [
         {
           type: 'doc',
+          id: 'versions/v0.6.4'
+        },
+        {
+          type: 'doc',
           id: 'versions/v0.4.7'
         },
         {

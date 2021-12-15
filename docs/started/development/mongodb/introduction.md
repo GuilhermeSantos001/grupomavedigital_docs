@@ -4,7 +4,7 @@ sidebar_label: Instalação
 
 # O que é o mongoDB?
 
-MongoDB é um banco de dados relacional, com foco em velocidade e escalabilidade. Nós usamos o mongoDB em diversos módulos no projeto, mas ele não é uma **Bala de Prata**, por isso não encorajamos nossos colaboradores a utiliza-lo em qualquer módulo, isso deve ser analisado e avaliado por todos os membros da equipe.
+MongoDB é um banco de dados orientado a documentos, com foco em velocidade e escalabilidade. Nós usamos o mongoDB em diversos módulos no projeto, mas ele não é uma **Bala de Prata**, por isso não encorajamos nossos colaboradores a utiliza-lo em qualquer módulo, isso deve ser analisado e avaliado por todos os membros da equipe.
 
 :::caution Disclaimer
 Nós utilizaremos nesse manual o **MongoDB** no **windows 10**, pois estamos simulando o ambiente do **Windows Server**, se você deseja usar o **MongoDB** em um ambiente **Linux**, você precisará buscar por manuais a parte.

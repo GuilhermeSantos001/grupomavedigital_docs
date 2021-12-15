@@ -13,8 +13,8 @@ const config = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-  organizationName: "GuilhermeSantos001", // Usually your GitHub org/user name.
-  projectName: "grupomavedigital_docs", // Usually your repo name.
+  organizationName: "GuilhermeSantos001",
+  projectName: "grupomavedigital_docs",
 
   plugins: [
     'docusaurus-plugin-sass',
@@ -25,8 +25,7 @@ const config = {
         path: 'docs/api',
         routeBasePath: 'docs/api',
         sidebarPath: require.resolve('./sidebarsAPI.js'),
-        editUrl:
-          "https://github.com/GuilhermeSantos001/grupomavedigital_docs/edit/main/",
+        editUrl: "https://github.com/GuilhermeSantos001/grupomavedigital_docs/edit/main/",
       },
     ],
   ],
@@ -40,13 +39,11 @@ const config = {
           path: 'docs/started',
           routeBasePath: 'docs/started',
           sidebarPath: require.resolve('./sidebarsStarted.js'),
-          editUrl:
-            "https://github.com/GuilhermeSantos001/grupomavedigital_docs/edit/main/",
+          editUrl: "https://github.com/GuilhermeSantos001/grupomavedigital_docs/edit/main/",
         },
         blog: {
           showReadingTime: true,
-          editUrl:
-            "https://github.com/GuilhermeSantos001/grupomavedigital_docs/edit/main/blog/",
+          editUrl: "https://github.com/GuilhermeSantos001/grupomavedigital_docs/edit/main/blog/",
           blogTitle: 'GMD Blog',
           blogDescription: 'Blog oficial do Grupo Mave Digital'
         },
@@ -65,8 +62,7 @@ const config = {
       hideableSidebar: true,
       id: 'support_us',
       announcementBar: {
-        content:
-          'A documentação a seguir foi realizada por programadores para programadores. <a target="_blank" rel="noopener noreferrer" href="mailto:suporte@grupomave.com.br?subject=Grupo Mave Digital - Feedback da Documentação&body=Olá, me chamo ... e gostaria de expressar minha opinião sobre a documentação.">Enviar Feedback</a>',
+        content: 'A documentação a seguir foi realizada por programadores para programadores. <a target="_blank" rel="noopener noreferrer" href="mailto:suporte@grupomave.com.br?subject=Grupo Mave Digital - Feedback da Documentação&body=Olá, me chamo ... e gostaria de expressar minha opinião sobre a documentação.">Enviar Feedback</a>',
         backgroundColor: '#fafbfc',
         textColor: '#004a6e',
         isCloseable: false
@@ -97,6 +93,10 @@ const config = {
             label: 'Versões',
             position: 'right',
             items: [
+              {
+                to: "/docs/api/versions/v0.6.4",
+                label: "v0.6.7 - Instável",
+              },
               {
                 to: "/docs/api/versions/v0.4.7",
                 label: "v0.4.7 - Instável",
@@ -137,8 +137,8 @@ const config = {
         ],
       },
       footer: {
-        style: "light",
-        copyright: `Grupo Mave 2020-2021 © Todos direitos reservados. Construído com <a target="_blank" rel="noopener noreferrer" href="https://docusaurus.io/" style="color: green;">Docusaurus</a>. Hospedado por <a target="_blank" rel="noopener noreferrer" href="https://vercel.com/" style="color: green;">Vercel</a>.`,
+        style: "dark",
+        copyright: `Grupo Mave 2020-2022 © Todos direitos reservados. Construído com <a target="_blank" rel="noopener noreferrer" href="https://docusaurus.io/" style="color: green;">Docusaurus</a>. Hospedado por <a target="_blank" rel="noopener noreferrer" href="https://vercel.com/" style="color: green;">Vercel</a>.`,
       },
       prism: {
         theme: lightCodeTheme,

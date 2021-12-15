@@ -5,7 +5,7 @@
   "scripts": {
     "installer": "npm i --global yarn@latest && npx yarn install --audit && yarn audit-fix",
     "audit-fix": "npx yarn-audit-fix",
-    "update": "npx yarn upgrade-interactive --latest",
+    "update": "yarn upgrade @docusaurus/core@latest @docusaurus/preset-classic@latest @docusaurus/module-type-aliases@latest",
     "docusaurus": "docusaurus",
     "start": "docusaurus start --port 8080",
     "build": "docusaurus build",
@@ -18,8 +18,8 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-beta.10",
-    "@docusaurus/preset-classic": "2.0.0-beta.10",
+    "@docusaurus/core": "^2.0.0-beta.13",
+    "@docusaurus/preset-classic": "^2.0.0-beta.13",
     "@mdx-js/react": "^1.6.21",
     "@svgr/webpack": "^6.1.1",
     "clsx": "^1.1.1",
@@ -33,9 +33,9 @@
     "url-loader": "^4.1.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^2.0.0-beta.10",
+    "@docusaurus/module-type-aliases": "^2.0.0-beta.13",
     "@tsconfig/docusaurus": "^1.0.4",
-    "typescript": "^4.5.2"
+    "typescript": "^4.5.3"
   },
   "browserslist": {
     "production": [
