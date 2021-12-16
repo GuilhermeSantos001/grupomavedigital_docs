@@ -94,6 +94,10 @@ const config = {
             position: 'right',
             items: [
               {
+                to: "/docs/api/versions/v0.8.1",
+                label: "v0.8.1 - Instável",
+              },
+              {
                 to: "/docs/api/versions/v0.6.4",
                 label: "v0.6.7 - Instável",
               },
