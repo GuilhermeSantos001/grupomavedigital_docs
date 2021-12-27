@@ -20,58 +20,54 @@ const sidebars = {
       id: "introduction",
     },
     {
-      type: "category",
-      label: "Changelog",
-      collapsed: false,
-      collapsible: true,
-      items: [
-        {
-          type: 'doc',
-          id: 'versions/v0.8.4'
-        },
-        {
-          type: 'doc',
-          id: 'versions/v0.8.1'
-        },
-        {
-          type: 'doc',
-          id: 'versions/v0.6.4'
-        },
-        {
-          type: 'doc',
-          id: 'versions/v0.4.7'
-        },
-        {
-          type: 'doc',
-          id: 'versions/v0.3.4'
-        },
-        {
-          type: 'doc',
-          id: 'versions/v0.2.4'
-        },
-        {
-          type: 'doc',
-          id: 'versions/v0.1.0'
-        }
-      ]
-    },
-    {
       type: "doc",
       id: "server"
     },
     {
       type: "category",
-      label: "Hercules Storage",
+      label: "Hercules -> Changelog",
       collapsed: false,
       collapsible: true,
       items: [
         {
           type: 'doc',
-          id: 'hercules/introduction'
+          id: 'hercules/v0.8.4'
         },
         {
           type: 'doc',
-          id: 'hercules/files'
+          id: 'hercules/v0.8.1'
+        },
+        {
+          type: 'doc',
+          id: 'hercules/v0.6.4'
+        },
+        {
+          type: 'doc',
+          id: 'hercules/v0.4.7'
+        },
+        {
+          type: 'doc',
+          id: 'hercules/v0.3.4'
+        },
+        {
+          type: 'doc',
+          id: 'hercules/v0.2.4'
+        },
+        {
+          type: 'doc',
+          id: 'hercules/v0.1.0'
+        }
+      ]
+    },
+    {
+      type: "category",
+      label: "Payback -> Changelog",
+      collapsed: false,
+      collapsible: true,
+      items: [
+        {
+          type: 'doc',
+          id: 'payback/v0.1.0'
         }
       ]
     }
