@@ -1,8 +1,8 @@
 ---
-sidebar_label: Instalar o ffmpeg
+sidebar_label: 📝 Instalar o ffmpeg
 ---
 
-# O que é ffmpeg?
+# 📝 O que é ffmpeg?
 
 O FFMPEG é um conjunto de ferramentas de código aberto para conversão de vídeo, audio e imagem. Ele foi desenvolvido para ser usado em aplicativos de vídeo, como o [GStreamer](http://gstreamer.freedesktop.org/).
 

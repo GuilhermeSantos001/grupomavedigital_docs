@@ -1,8 +1,8 @@
 ---
-sidebar_label: Fragmentação
+sidebar_label: 💡 Fragmentação
 ---
 
-# Implementando uma solução de dados fragmentados.
+# 💡 Implementando uma solução de dados fragmentados.
 
 :::caution DISCLAIMER
 Esse manual é indicado só para fins de estudo, você não precisa montar uma infraestrutura de produção para usar o **mongoDB**. Nós recomendamos a leitura para entender o funcionamento e o poder do **mongoDB**.

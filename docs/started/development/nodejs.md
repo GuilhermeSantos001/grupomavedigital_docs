@@ -1,8 +1,8 @@
 ---
-sidebar_label: Instalar o Node.js
+sidebar_label: 📝 Instalar o Node.js
 ---
 
-# O que é o Node.js?
+# 📝 O que é o Node.js?
 
 O [Node.js](https://nodejs.org/en/) é um ambiente de execução do JavaScript criado para a programação do lado do servidor. Ele permite que os desenvolvedores criem funcionalidades de back-ends escaláveis usando o JavaScript, uma linguagem que muitos já estão familiarizados em desenvolvimento Web baseado em navegador.
 

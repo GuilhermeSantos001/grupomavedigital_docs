@@ -1,8 +1,8 @@
 ---
-sidebar_label: Instalação
+sidebar_label: 💡 Instalação
 ---
 
-# O que é o mongoDB?
+# 💡 O que é o mongoDB?
 
 MongoDB é um banco de dados orientado a documentos, com foco em velocidade e escalabilidade. Nós usamos o mongoDB em diversos módulos no projeto, mas ele não é uma **Bala de Prata**, por isso não encorajamos nossos colaboradores a utiliza-lo em qualquer módulo, isso deve ser analisado e avaliado por todos os membros da equipe.
 

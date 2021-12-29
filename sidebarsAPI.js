@@ -25,7 +25,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Hercules -> Changelog",
+      label: "⚗ Hercules -> Changelog",
       collapsed: false,
       collapsible: true,
       items: [
@@ -61,10 +61,14 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Payback -> Changelog",
+      label: "⚗ Payback -> Changelog",
       collapsed: false,
       collapsible: true,
       items: [
+        {
+          type: 'doc',
+          id: 'payback/v0.8.5'
+        },
         {
           type: 'doc',
           id: 'payback/v0.1.0'

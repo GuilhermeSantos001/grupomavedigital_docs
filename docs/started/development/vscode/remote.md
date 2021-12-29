@@ -1,8 +1,8 @@
 ---
-sidebar_label: Acessar o WSL
+sidebar_label: 💡 Acessar o WSL
 ---
 
-# Acesso direto ao WSL
+# 💡 Acesso direto ao WSL
 
 O vscode permite acessar remotamente o WSL, o que facilita muito o desenvolvimento e os testes no linux.
 

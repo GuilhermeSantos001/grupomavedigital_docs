@@ -1,14 +1,14 @@
 ---
-sidebar_label: Servidor
+sidebar_label: 🔰 Servidor
 ---
 
-# Introdução
+# 🔰 Introdução
 
-Estamos utilizando o **Apollo Server GraphQL** para desenvolvermos nossa aplicação.
+> Estamos utilizando o **Apollo Server GraphQL** para comunicar API.
 
 ## Graphql
 
-O graphql é um protocolo de comunicação entre cliente e servidor,que flexibiliza a transição dos dados, ou seja, podemos escolher quais dados queremos trazer para o cliente do servidor, diferente de uma API REST, que traz todos os dados na requisição.
+O graphql é um protocolo de comunicação entre cliente e servidor,que flexibiliza a transição dos dados, ou seja, podemos escolher quais dados queremos trazer para o cliente do servidor, diferente de uma API REST convencional, que traz todos os dados na requisição.
 
 ## Express
 

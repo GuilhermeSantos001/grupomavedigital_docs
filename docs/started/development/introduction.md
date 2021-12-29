@@ -1,8 +1,8 @@
 ---
-sidebar_label: Configurar WSL (Subsistema Windows para Linux)
+sidebar_label: 💡 Configurar WSL (Subsistema Windows para Linux)
 ---
 
-# O que é WSL?
+# 💡 O que é WSL?
 
 **Subsistema Windows para Linux** é um módulo do sistema operacional **Windows 10**, que visa a disponibilizar um ambiente Linux compatível no sistema da Microsoft, de forma que se possam executar programas nativos dos sistemas GNU/Linux dentro do próprio Windows sem a necessidade de emuladores ou do uso de máquinas virtuais.
 

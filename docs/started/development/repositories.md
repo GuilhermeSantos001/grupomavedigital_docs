@@ -1,8 +1,8 @@
 ---
-sidebar_label: Repositórios do projeto
+sidebar_label: 🏷 Repositórios do projeto
 ---
 
-# Como funciona o repositório do projeto?
+# 🏷 Como funciona o repositório do projeto?
 
 Estamos utilizando o [git](https://git-scm.com/) para manter o código-fonte do projeto. Caso você não saiba usar o git, você pode ler o [livro](https://git-scm.com/book/pt-br/v2) oficial para entender como usar o git.
 

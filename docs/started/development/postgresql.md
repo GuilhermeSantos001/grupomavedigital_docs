@@ -1,8 +1,8 @@
 ---
-sidebar_label: PostgreSQL
+sidebar_label: 📝 PostgreSQL
 ---
 
-# O que é o PostgreSQL?
+# 📝 O que é o PostgreSQL?
 
 PostgreSQL é um gerenciador de banco de dados relacionados que otimiza muito o trabalho de quem precisa administrar informações nesses níveis. A ferramenta é de fácil instalação e de uso prático, proporcionando uma série de vantagens, especialmente com o uso de extensões.
 

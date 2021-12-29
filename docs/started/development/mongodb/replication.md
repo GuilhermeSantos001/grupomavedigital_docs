@@ -1,8 +1,8 @@
 ---
-sidebar_label: Replicação
+sidebar_label: 💡 Replicação
 ---
 
-# Implementando um conjunto de replicação
+# 💡 Implementando um conjunto de replicação
 
 :::caution DISCLAIMER
 Esse manual é indicado só para fins de estudo, você não precisa montar uma infraestrutura de produção para usar o **mongoDB**. Nós recomendamos a leitura para entender o funcionamento e o poder do **mongoDB**.

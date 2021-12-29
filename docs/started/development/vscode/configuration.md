@@ -1,8 +1,8 @@
 ---
-sidebar_label: Configuração
+sidebar_label: 💡 Configuração
 ---
 
-# Posso usar o vscode sem as configurações?
+# 💡 Posso usar o vscode sem as configurações?
 
 Com certeza, mas recomendamos que você use nossas configurações para aproveitar melhor o vscode.
 

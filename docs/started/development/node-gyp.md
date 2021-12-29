@@ -1,8 +1,8 @@
 ---
-sidebar_label: Instalar o node-gyp
+sidebar_label: 📝 Instalar o node-gyp
 ---
 
-# O que é node-gyp?
+# 📝 O que é node-gyp?
 
 node-gyp é uma ferramenta de linha de comando de plataforma cruzada escrita em Node.js para compilar módulos addon nativos para Node.js. Ele contém uma cópia vendida do projeto gyp-next que foi usado anteriormente pela equipe do Chromium, estendido para oferecer suporte ao desenvolvimento de complementos nativos do Node.js.
 

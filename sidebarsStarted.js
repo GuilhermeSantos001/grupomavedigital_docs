@@ -21,7 +21,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Iniciando",
+      label: "📝 Iniciando",
       collapsed: false,
       items: [
         {
@@ -36,7 +36,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Visual Studio Code",
+      label: "📝 Visual Studio Code",
       collapsed: false,
       items: [
         {
@@ -71,7 +71,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "MongoDB",
+      label: "📝 MongoDB",
       collapsed: false,
       items: [
         {

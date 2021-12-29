@@ -1,12 +1,14 @@
 ---
-sidebar_label: Redirecionamento de porta
+sidebar_label: 💡 Redirecionamento de porta
 ---
+
+# 💡 Redirecionar usando WSL
 
 :::caution
 Só redirecione as portas caso você esteja rodando o servidor de aplicação no windows. Pois o redirecionamento pega todo o trafego que vem da porta informada do windows e transfere para o WSL na porta informada. Se você já está rodando a aplicação no linux, o redirecionamento não é necessário.
 :::
 
-# Por qual motivo devo redirecionar as portas?
+## Por qual motivo devo redirecionar as portas?
 
 Basicamente não queremos usar o tradicional **http://localhost:3000**, mas sim **http://localhost**, dessa forma fica mais parecido com o resultado final (**http://grupomavedigital.com.br**).
 

@@ -1,8 +1,8 @@
 ---
-sidebar_label: Conclusão
+sidebar_label: 🏆 Conclusão
 ---
 
-# Ambiente configurado com sucesso
+# 🏆 Ambiente configurado com sucesso
 
 Agora já temos nossa maquina pronta para o desenvolvimento.
 
