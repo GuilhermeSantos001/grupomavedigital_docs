@@ -67,6 +67,10 @@ const sidebars = {
       items: [
         {
           type: 'doc',
+          id: 'payback/v2.9.4'
+        },
+        {
+          type: 'doc',
           id: 'payback/v0.8.5'
         },
         {
