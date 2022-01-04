@@ -28,6 +28,16 @@ const config = {
         editUrl: "https://github.com/GuilhermeSantos001/grupomavedigital_docs/edit/main/",
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'env',
+        path: 'docs/env',
+        routeBasePath: 'docs/env',
+        sidebarPath: require.resolve('./sidebarsEnv.js'),
+        editUrl: "https://github.com/GuilhermeSantos001/grupomavedigital_docs/edit/main/",
+      },
+    ],
   ],
 
   presets: [
@@ -87,6 +97,13 @@ const config = {
             docId: "introduction",
             position: "left",
             label: "Começando do Zero"
+          },
+          {
+            type: "doc",
+            docId: "introduction",
+            position: "left",
+            label: ".ENV",
+            docsPluginId: 'env',
           },
           {
             type: 'dropdown',
