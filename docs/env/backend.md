@@ -114,7 +114,7 @@ Define se o ambiente é de desenvolvimento ou produção.
 
 #### 🔑 APP_HOST
 
-> Endereço do servidor, por exemplo `127.0.0.1`.
+> Endereço do servidor, por exemplo `localhost`.
 
 #### 🔑 APP_PORT
 
@@ -138,7 +138,7 @@ Define se o servidor pode ser iniciado em modo cluster.
 
 #### 🔑 FRONTEND_HOST
 
-> Endereço do frontend, por exemplo `127.0.0.1`.
+> Endereço do frontend, por exemplo `localhost`.
 
 #### 🔑 FRONTEND_PORT
 
@@ -166,7 +166,7 @@ Define se o servidor pode ser iniciado em modo cluster.
 
 #### 🔑 DB_HOST
 
-> Endereço do servidor do banco de dados, por exemplo `127.0.0.1`.
+> Endereço do servidor do banco de dados, por exemplo `localhost`.
 
 #### 🔑 DB_PORT
 
@@ -184,7 +184,7 @@ Define se o servidor pode ser iniciado em modo cluster.
 
 #### 🔑 REDIS_HOST
 
-> Endereço do servidor do Redis, por exemplo `127.0.0.1`.
+> Endereço do servidor do Redis, por exemplo `localhost`.
 
 #### 🔑 REDIS_PORT
 

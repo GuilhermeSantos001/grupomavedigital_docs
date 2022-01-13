@@ -159,7 +159,7 @@ server {
        root /usr/share/nginx/html;
    }
 
-   # proxy the PHP scripts to Apache listening on 127.0.0.1:80
+   # proxy the PHP scripts to Apache listening on localhost:80
    #
    # location ~ \.php$ {
    #    proxy_pass   http://127.0.0.1;
