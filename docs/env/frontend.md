@@ -64,6 +64,20 @@ Ainda não há testes homologados no cypress.
 {}
 ```
 
+## 📝 Arquivo (cypress/config/cache.spec.json)
+
+> Arquivo deve ser criado na pasta /cypress/config
+
+:::caution Utilização do arquivo
+Esse arquivo é usado sempre que os testes do cypress são executados.
+:::
+
+```json title="cache.spec.json"
+{
+  "browserDatabase": "IndexedDB"
+}
+```
+
 ## 🔏 Chaves
 
 ### 🔐 Node
