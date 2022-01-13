@@ -21,8 +21,9 @@ SIGNED_URL_SECRET=
 
 # PUBLIC
 NEXT_PUBLIC_GRAPHQL_HOST=
-NEXT_PUBLIC_WEBSOCKET_HOST=
+NEXT_PUBLIC_EXPRESS_HOST=
 NEXT_PUBLIC_EXPRESS_AUTHORIZATION=
+NEXT_PUBLIC_WEBSOCKET_HOST=
 ```
 
 ## 📝 Arquivo (.env.test)
@@ -42,8 +43,9 @@ SIGNED_URL_SECRET=
 
 # PUBLIC
 NEXT_PUBLIC_GRAPHQL_HOST=
-NEXT_PUBLIC_WEBSOCKET_HOST=
+NEXT_PUBLIC_EXPRESS_HOST=
 NEXT_PUBLIC_EXPRESS_AUTHORIZATION=
+NEXT_PUBLIC_WEBSOCKET_HOST=
 ```
 
 ## 📝 Arquivo (.cypress.env.json)
@@ -84,10 +86,14 @@ Define se o ambiente é de desenvolvimento ou produção.
 
 > Endereço do servidor GraphQL, por exemplo `http://localhost:4000/graphql`.
 
-#### 🔑 NEXT_PUBLIC_WEBSOCKET_HOST
+#### 🔑 NEXT_PUBLIC_GRAPHQL_HOST
 
-> Endereço do servidor WebSocket, por exemplo `ws://localhost:8020`.
+> Endereço do servidor GraphQL, por exemplo `http://localhost:4000/express`.
 
 #### 🔑 NEXT_PUBLIC_EXPRESS_AUTHORIZATION
 
 > Chave de autorização do servidor, por exemplo `2669efx$458@`.
+
+#### 🔑 NEXT_PUBLIC_WEBSOCKET_HOST
+
+> Endereço do servidor WebSocket, por exemplo `ws://localhost:8020`.
