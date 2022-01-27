@@ -24,9 +24,29 @@ const sidebars = {
       id: "server"
     },
     {
+      type: 'category',
+      label: "📦 API v1.0.0",
+      collapsed: false,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "v1.0.0/changelog"
+        },
+        {
+          type: "doc",
+          id: "v1.0.0/costCenter"
+        },
+        {
+          type: "doc",
+          id: "v1.0.0/scale"
+        }
+      ]
+    },
+    {
       type: "category",
       label: "⚗ Hercules -> Changelog",
-      collapsed: false,
+      collapsed: true,
       collapsible: true,
       items: [
         {
@@ -62,7 +82,7 @@ const sidebars = {
     {
       type: "category",
       label: "⚗ Payback -> Changelog",
-      collapsed: false,
+      collapsed: true,
       collapsible: true,
       items: [
         {

@@ -1,14 +1,15 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './HomepageFeatures.module.css';
-import useThemeContext from '@theme/hooks/useThemeContext';
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-import image1_light from '@site/static/img/aprendizagem-light.png';
-import image1_dark from '@site/static/img/aprendizagem-dark.png';
-import image2_light from '@site/static/img/colaboração-light.png';
-import image2_dark from '@site/static/img/colaboração-dark.png';
-import image3_light from '@site/static/img/decolagem-light.png';
-import image3_dark from '@site/static/img/decolagem-dark.png';
+import image1_light from '/img/aprendizagem-light.png';
+import image1_dark from '/img/aprendizagem-dark.png';
+import image2_light from '/img/colaboração-light.png';
+import image2_dark from '/img/colaboração-dark.png';
+import image3_light from '/img/decolagem-light.png';
+import image3_dark from '/img/decolagem-dark.png';
 
 const FeatureList = [
   {
@@ -49,33 +50,29 @@ const FeatureList = [
   },
 ];
 
-function Feature({ image, title, description }) {
-  return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <img src={image} className={styles.featureSvg} alt={title} />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </div>
-    </div>
-  );
-}
-
 export default function HomepageFeatures() {
-  const { isDarkTheme } = useThemeContext();
-
   return (
     <section className={styles.features}>
       <div className="container">
         <div className="row">
-          {FeatureList.map((props, idx) =>
-            isDarkTheme ? (
-              <Feature key={idx} {...props} image={props.image.dark} />
-            ) : (
-              <Feature key={idx} {...props} image={props.image.light} />
-            ))}
+          {FeatureList.map((props, idx) => (
+            <div key={idx} className={clsx('col col--4')}>
+              <div className="text--center">
+                <ThemedImage
+                  className={styles.featureSvg}
+                  alt={props.title}
+                  sources={{
+                    light: useBaseUrl(props.image.light),
+                    dark: useBaseUrl(props.image.dark),
+                  }}
+                />
+              </div>
+              <div className="text--center padding-horiz--md">
+                <h3>{props.title}</h3>
+                <p>{props.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

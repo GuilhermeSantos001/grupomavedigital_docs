@@ -16,9 +16,13 @@ Esse arquivo é usado sempre que o sistema é executado.
 # NODE
 NODE_ENV=
 
+# PRISMA
+DATABASE_URL=
+
 # BACKEND
 APP_HOST=
 APP_PORT=
+APP_SOCKET_PORT=
 APP_AUTHORIZATION=
 APP_SECRET=
 APP_CLUSTER=
@@ -64,9 +68,13 @@ Esse arquivo é usado sempre que os testes são executados.
 # NODE
 NODE_ENV=
 
+# PRISMA
+DATABASE_URL=
+
 # BACKEND
 APP_HOST=
 APP_PORT=
+APP_SOCKET_PORT=
 APP_AUTHORIZATION=
 APP_SECRET=
 APP_CLUSTER=
@@ -110,6 +118,12 @@ SMTP_SECURE=
 
 Define se o ambiente é de desenvolvimento ou produção.
 
+### 🔐 Prisma
+
+#### 🔑 DATABASE_URL
+
+> URL de conexão do banco de dados, por exemplo `postgresql://username:password@localhost:5432/dbName?schema=public`.
+
 ### 🔐 Backend
 
 #### 🔑 APP_HOST
@@ -119,6 +133,10 @@ Define se o ambiente é de desenvolvimento ou produção.
 #### 🔑 APP_PORT
 
 > Porta do servidor, por exemplo `4000`.
+
+#### 🔑 APP_SOCKET_PORT
+
+> Porta do websocket, por exemplo `5000`.
 
 #### 🔑 APP_AUTHORIZATION
 
