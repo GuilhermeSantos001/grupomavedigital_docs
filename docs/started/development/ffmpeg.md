@@ -9,13 +9,6 @@ O FFMPEG é um conjunto de ferramentas de código aberto para conversão de víd
 ## Instalar o ffmpeg no linux
 
 ```bash title="Terminal de Comando"
-sudo add-apt-repository ppa:savoury1/ffmpeg4
-sudo add-apt-repository ppa:savoury1/graphics
-sudo add-apt-repository ppa:savoury1/multimedia
-
-sudo apt-get update
-sudo apt-get full-upgrade
-
 sudo apt-get install ffmpeg
 ffmpeg -version
 ```
