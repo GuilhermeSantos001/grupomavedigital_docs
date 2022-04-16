@@ -25,6 +25,10 @@ const sidebars = {
     },
     {
       type: "doc",
+      id: "dns",
+    },
+    {
+      type: "doc",
       id: "windows-admin-center",
     },
   ],
