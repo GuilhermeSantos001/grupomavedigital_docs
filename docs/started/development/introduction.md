@@ -80,8 +80,8 @@ sudo nano /etc/nginx/nginx.conf
 Nesse arquivo vamos adicionar dentro de http, o seguinte:
 
 ```conf title="/etc/nginx/nginx.conf"
-# Define para 20 MB maximo de upload
-client_max_body_size 20M;
+# Define para 50 MB máximo de upload
+client_max_body_size 50M;
 
 log_format main '$remote_addr - $remote_user [$time_local] "request" '
                 '$status $body_bytes_sent "$http_referer" '
@@ -115,7 +115,7 @@ map $http_upgrade $connection_upgrade {
 upstream socket_nodes {
     ip_hash;
     # weight - Define a proporção do tráfego direcionado ao servidor
-    server 192.168.0.130:4000 weight=5;
+    server localhost:4000 weight=5;
     # server other-ip:port;
 }
 
@@ -129,11 +129,15 @@ server {
    # access_log /var/log/nginx/host.access.log main;
 
    location / {
-       proxy_pass http://192.168.0.130:3000/;
+       proxy_pass http://localhost:3000/;
+   }
+
+   location /support {
+       proxy_pass http://localhost/glpi;
    }
 
    location /graphql {
-       proxy_pass http://192.168.0.130:4000/graphql/;
+       proxy_pass http://localhost:4000/graphql/;
    }
 
    location  /express {
@@ -151,6 +155,10 @@ server {
    }
 
    # error_page 404  /404.html;
+   error_page 400 402 403 404 /40x.html;
+   location = /40x.html {
+       root /usr/share/nginx/html;
+   }
 
    # redirect server error pages to the static page /50x.html
    #
@@ -198,6 +206,260 @@ server {
 }
 ```
 
+Arquivo usado nos erros 400, 402, 403 e 404.
+
+```html title="/usr/share/nginx/html/40x.html"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <title>Pagina não encontrada!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+      /*<![CDATA[*/
+      body {
+        background-color: #fff;
+        color: #000;
+        font-size: 0.9em;
+        font-family: sans-serif, helvetica;
+        margin: 0;
+        padding: 0;
+      }
+      :link {
+        color: #c00;
+      }
+      :visited {
+        color: #c00;
+      }
+      a:hover {
+        color: #f50;
+      }
+      h1 {
+        text-align: center;
+        margin: 0;
+        padding: 0.6em 2em 0.4em;
+        background-color: #294172;
+        color: #fff;
+        font-weight: normal;
+        font-size: 1.75em;
+        border-bottom: 2px solid #000;
+      }
+      h1 strong {
+        font-weight: bold;
+        font-size: 1.5em;
+      }
+      h2 {
+        text-align: center;
+        background-color: #3c6eb4;
+        font-size: 1.1em;
+        font-weight: bold;
+        color: #fff;
+        margin: 0;
+        padding: 0.5em;
+        border-bottom: 2px solid #294172;
+      }
+      h3 {
+        text-align: center;
+        background-color: #ff0000;
+        padding: 0.5em;
+        color: #fff;
+      }
+      hr {
+        display: none;
+      }
+      .content {
+        padding: 1em 5em;
+      }
+      .alert {
+        border: 2px solid #000;
+      }
+
+      img {
+        border: 2px solid #fff;
+        padding: 2px;
+        margin: 2px;
+      }
+      a:hover img {
+        border: 2px solid #294172;
+      }
+      .logos {
+        margin: 1em;
+        text-align: center;
+      }
+      /*]]>*/
+    </style>
+  </head>
+
+  <body>
+    <h1><strong>Atenção!</strong></h1>
+
+    <div class="content">
+      <h3>
+        A pagina que você está procurando não foi encontrada, tente outra
+        pagina...
+      </h3>
+
+    <div class="content">
+      <h3>Nosso sistema está em manutenção. Tente novamente, mais tarde!</h3>
+
+      <div class="alert">
+        <h2>Administração</h2>
+        <div class="content">
+          <p>
+            Entre em contato com nossa equipe de suporte:
+            suporte@grupomave.com.br
+          </p>
+        </div>
+      </div>
+
+      <div class="logos">
+       <a href="http://nginx.net/"
+          ><img
+            src="https://imgur.com/9Z1zl8k.png"
+            title="Powered by nginx"
+            alt="[ Powered by nginx ]"
+            width="42"
+            height="42"
+        /></a>
+
+        <a href="http://grupomave.com.br/"
+          ><img
+            src="https://imgur.com/W8tUHSd.png"
+            title="Powered by Grupo Mave"
+            alt="[ Powered by Grupo Mave ]"
+            width="48"
+            height="42"
+        /></a>
+      </div>
+    </div>
+  </body>
+</html>
+```
+
+Arquivo usado nos erros 500, 502, 503 e 504.
+
+```html title="/usr/share/nginx/html/50x.html"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <title>Sistema em manutenção</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+      /*<![CDATA[*/
+      body {
+        background-color: #fff;
+        color: #000;
+        font-size: 0.9em;
+        font-family: sans-serif, helvetica;
+        margin: 0;
+        padding: 0;
+      }
+      :link {
+        color: #c00;
+      }
+      :visited {
+        color: #c00;
+      }
+      a:hover {
+        color: #f50;
+      }
+      h1 {
+        text-align: center;
+        margin: 0;
+        padding: 0.6em 2em 0.4em;
+        background-color: #294172;
+        color: #fff;
+        font-weight: normal;
+        font-size: 1.75em;
+        border-bottom: 2px solid #000;
+      }
+      h1 strong {
+        font-weight: bold;
+        font-size: 1.5em;
+      }
+      h2 {
+        text-align: center;
+        background-color: #3c6eb4;
+        font-size: 1.1em;
+        font-weight: bold;
+        color: #fff;
+        margin: 0;
+        padding: 0.5em;
+        border-bottom: 2px solid #294172;
+      }
+      h3 {
+        text-align: center;
+        background-color: #ff0000;
+        padding: 0.5em;
+        color: #fff;
+      }
+      hr {
+        display: none;
+      }
+      .content {
+        padding: 1em 5em;
+      }
+      .alert {
+        border: 2px solid #000;
+      }
+
+      img {
+        border: 2px solid #fff;
+        padding: 2px;
+        margin: 2px;
+      }
+      a:hover img {
+        border: 2px solid #294172;
+      }
+      .logos {
+        margin: 1em;
+        text-align: center;
+      }
+      /*]]>*/
+    </style>
+  </head>
+
+  <body>
+    <h1><strong>Atenção!</strong></h1>
+
+    <div class="content">
+      <h3>Nosso sistema está em manutenção. Tente novamente, mais tarde!</h3>
+
+      <div class="alert">
+        <h2>Administração</h2>
+        <div class="content">
+          <p>
+            Entre em contato com nossa equipe de suporte:
+            suporte@grupomave.com.br
+          </p>
+        </div>
+      </div>
+
+      <div class="logos">
+        <a href="http://nginx.net/"
+          ><img
+            src="https://imgur.com/9Z1zl8k.png"
+            title="Powered by nginx"
+            alt="[ Powered by nginx ]"
+            width="42"
+            height="42"
+        /></a>
+
+        <a href="http://grupomave.com.br/"
+          ><img
+            src="https://imgur.com/W8tUHSd.png"
+            title="Powered by Grupo Mave"
+            alt="[ Powered by Grupo Mave ]"
+            width="48"
+            height="42"
+        /></a>
+      </div>
+    </div>
+  </body>
+</html>
+```
+
 ![2° Passo](https://i.imgur.com/KOEwSkM.png)
 
 Por fim, vamos iniciar o nginx.
@@ -228,4 +490,4 @@ Sim nós tentamos ao maximo produzir materiais que são uteis para quem usa o WS
 - [Configurando SSL com Nginx](https://www.organicadigital.com/blog/configurando-ssl-com-nginx/)
 - [ERROR: Could not find a profile matching 'Nginx Full'](https://stackoverflow.com/questions/57924093/error-could-not-find-a-profile-matching-nginx-full)
 - [Get user real ip in nginx behind nginx reverse proxy](https://ypereirareis.github.io/blog/2017/02/15/nginx-real-ip-behind-nginx-reverse-proxy/)
->>>>>>> 1788e406bf326d383b66f3c43a05679d747a8b98:versioned_docs/version-1.0.0/development/introduction.md
+  > > > > > > > 1788e406bf326d383b66f3c43a05679d747a8b98:versioned_docs/version-1.0.0/development/introduction.md

@@ -34,11 +34,11 @@ sudo apt-get install npm
 Vamos instalar o yarn, o gerenciador de pacotes Node.js mais moderno:
 
 ```bash title="Terminal de Comando"
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
-sudo apt-get install yarn
-yarn --version
+sudo apt update
+sudo apt install --no-install-recommends yarn
 ```
 
 ![3° Passo](https://i.imgur.com/5Kic4Yt.png)

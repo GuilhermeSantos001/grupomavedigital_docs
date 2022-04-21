@@ -11,6 +11,13 @@ Este novo recurso permite que você gerencie o sistema operacional Windows Serve
 
 Baixe [Windows Admin Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-admin-center) e instale no seu computador.
 
+## Credenciais de Acesso
+
+> Antes de adicionar o servidor no Windows Admin Center, você precisa adicionar as credenciais de acesso ao servidor.
+
+![ref](https://i.imgur.com/Aos3eQH.png)
+![ref](https://i.imgur.com/uMVySIZ.png)
+
 ## Configurar o gerenciamento
 
 Para gerenciar um computador ou servidor, primeiro você precisa configurar o servidor **DNS** ou usar o arquivo **Hosts** do windows.
