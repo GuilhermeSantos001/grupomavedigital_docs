@@ -48,6 +48,16 @@ const config = {
         editUrl: "https://github.com/GuilhermeSantos001/grupomavedigital_docs/edit/main/",
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'changelog',
+        path: 'docs/updates',
+        routeBasePath: 'docs/updates',
+        sidebarPath: require.resolve('./sidebarsChangelog.js'),
+        editUrl: "https://github.com/GuilhermeSantos001/grupomavedigital_docs/edit/main/",
+      },
+    ],
   ],
 
   presets: [
@@ -133,6 +143,13 @@ const config = {
             docsPluginId: 'env',
           },
           {
+            type: "doc",
+            docId: "introduction",
+            position: "right",
+            label: "Atualizações",
+            docsPluginId: 'changelog',
+          },
+          {
             type: 'dropdown',
             label: 'Comunidade',
             position: "right",
@@ -150,7 +167,7 @@ const config = {
                 label: "GitHub",
               },
             ],
-          }
+          },
         ],
       },
       footer: {

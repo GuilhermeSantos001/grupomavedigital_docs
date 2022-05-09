@@ -4,7 +4,7 @@ sidebar_label: ♻️ Changelog
 
 # ♻️ Changelog
 
-## 📅 Calendario de Atualizações
+## Calendário
 
 ### 📅 Fevereiro/2022
 
