@@ -42,4 +42,5 @@ npm config set python /usr/bin/pydoc3.8
 ## Referências
 
 - [Como Instalar Python no Ubuntu 18.04 Com a Ferramenta Pip](https://www.hostinger.com.br/tutoriais/como-instalar-python-ubuntu?ppc_campaign=google_performance_max&gclid=Cj0KCQjw_fiLBhDOARIsAF4khR11KPDn3hrxeucNHPhWAhuqfSyJIsJEnTGaJ1Zw809dNxyRZfRhkqAaAj3WEALw_wcB)
+
 - [How to install G++ the C++ compiler on Ubuntu 20.04 LTS Focal Fossa Linux](https://linuxconfig.org/how-to-install-g-the-c-compiler-on-ubuntu-20-04-lts-focal-fossa-linux)

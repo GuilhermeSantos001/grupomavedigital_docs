@@ -80,7 +80,7 @@ export default function Home() {
                         <h2>Acesso a comunidade</h2>
                         <p>
                             Consideramos o todo como nossa comunidade, cada repositório, commit, post, tudo, é parte de nossa comunidade.
-                            Então tome cuidado, pois em qualquer lugar você pode está ajudando/prejudicando a comunidade.
+                            Então tome cuidado, pois em qualquer lugar você pode estar ajudando ou prejudicando a comunidade.
                         </p>
                     </div>
                 </section>

@@ -18,10 +18,11 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-beta.18",
-    "@docusaurus/preset-classic": "^2.0.0-beta.18",
+    "@docusaurus/core": "^2.0.0-beta.20",
+    "@docusaurus/preset-classic": "^2.0.0-beta.20",
     "@mdx-js/react": "^1.6.21",
     "@svgr/webpack": "^6.1.1",
+    "@types/prismjs": "^1.26.0",
     "clsx": "^1.1.1",
     "docusaurus-plugin-sass": "^0.2.1",
     "file-loader": "^6.2.0",
@@ -33,7 +34,7 @@
     "url-loader": "^4.1.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^2.0.0-beta.18",
+    "@docusaurus/module-type-aliases": "^2.0.0-beta.20",
     "@tsconfig/docusaurus": "^1.0.4",
     "typescript": "^4.5.3"
   },

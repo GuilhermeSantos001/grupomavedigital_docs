@@ -1,45 +1,14 @@
 ---
-sidebar_label: 💡 Configurar WSL (Subsistema Windows para Linux)
+sidebar_label: 💡 Configurar o Ubuntu
 ---
 
-# 💡 O que é WSL?
+# 📜 Baixe e Instale o Ubuntu
 
-**Subsistema Windows para Linux** é um módulo do sistema operacional **Windows 10**, que visa a disponibilizar um ambiente Linux compatível no sistema da Microsoft, de forma que se possam executar programas nativos dos sistemas GNU/Linux dentro do próprio Windows sem a necessidade de emuladores ou do uso de máquinas virtuais.
+> link de download: [ubuntu-22.04-desktop-amd64.iso](https://ubuntu.com/download/desktop/thank-you?version=22.04&architecture=amd64)
 
-## Como funciona?
+## Nginx
 
-O WSL é um subsistema do sistema operacional Windows 10, que permite a execução de programas nativos do sistema GNU/Linux dentro do Windows, ou seja, sem a necessidade de emuladores ou do uso de máquinas virtuais. Você só precisa configurar e manter uma unica máquina de desenvolvimento, isso é extremamente vantajoso para o desenvolvimento de software, pois manter varias máquinas de desenvolvimento é um processo muito pesado e difícil de dar manutenção.
-
-## Instalação
-
-A microsoft disponibilizou um documento para configurar o WSL de forma simples, você pode acompanhar o tutorial [aqui](https://docs.microsoft.com/pt-br/windows/wsl/install).
-
-## Configuração
-
-Após instalado o WSL, vamos instalar o **redis** e o **nginx**. Provavelmente após seguir o tutorial, você já terá instalado o ubuntu como sua distribuição linux, mas se você não tiver, você pode fazer isso agora, basta abir a **Microsoft Store** e procurar por **Ubuntu**, instale a versão 20.04 LTS.
-
-### Instalando redis
-
-Para abrir o terminal do ubuntu, você deve iniciar ele como um programa normal do seu windows, basta abrir a barra de pesquisa e procurar por ubuntu e abri-lo normalmente. O ubuntu instalado vem sem a interface gráfica, então utilizaremos somente a linha de comando.
-
-```bash title="Terminal de Comando"
-sudo apt-get update // Atualização do sistema
-sudo apt-get upgrade // Atualização dos pacotes
-
-sudo apt-get install redis-server // Instalação do redis
-
-sudo service redis-server start // Inicia o serviço do redis
-sudo service redis-server status // Verifica se o serviço está rodando
-```
-
-![1° Passo](https://i.imgur.com/SYBnfTV.png)
-![2° Passo](https://i.imgur.com/aXEdsO9.png)
-![3° Passo](https://i.imgur.com/fiHT6bw.png)
-![4° Passo](https://i.imgur.com/t0X0H6D.png)
-
-Se você quiser existem configurações adicionais que podem ser aplicadas ao redis, mas não é necessário para um ambiente de desenvolvimento, as configurações padrões já são o suficiente.
-
-### Instalando nginx
+### Instalação
 
 Vamos seguir os [passos oficiais](https://nginx.org/en/linux_packages.html#Ubuntu) do **nginx** para instalar no **ubuntu**.
 
@@ -69,7 +38,7 @@ sudo apt-get install nginx
 ![5° Passo](https://i.imgur.com/jYWU6wg.png)
 ![6° Passo](https://i.imgur.com/yDnwGxC.png)
 
-## Configurando o nginx
+### Configurando o nginx
 
 Após instalar o nginx, vamos configurar:
 
@@ -115,7 +84,7 @@ map $http_upgrade $connection_upgrade {
 upstream socket_nodes {
     ip_hash;
     # weight - Define a proporção do tráfego direcionado ao servidor
-    server localhost:4000 weight=5;
+    server localhost:5000 weight=5;
     # server other-ip:port;
 }
 
@@ -132,8 +101,18 @@ server {
        proxy_pass http://localhost:3000/;
    }
 
-   location /support {
+   location /socket.io/ {
+       proxy_set_header Upgrade $http_upgrade;
+       proxy_set_header Connection "upgrade";
+       proxy_pass http://socket_nodes;
+   }
+
+   location /glpi {
        proxy_pass http://localhost/glpi;
+   }
+
+   location /app {
+       proxy_pass http://localhost:4000/api/v1;
    }
 
    location /graphql {
@@ -189,20 +168,6 @@ server {
    # location ~ /\.ht {
    #    deny  all;
    # }
-}
-
-server {
-   listen 8020;
-   server_name socketio;
-
-   location / {
-       proxy_set_header Upgrade $http_upgrade;
-       proxy_set_header Connection "upgrade";
-       proxy_http_version 1.1;
-       proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-       proxy_set_header Host $host;
-       proxy_pass http://socket_nodes;
-    }
 }
 ```
 
@@ -469,25 +434,69 @@ sudo service nginx start
 sudo service nginx status // * nginx is running
 ```
 
-## Considerações
+- Não iremos configurar um SSL neste momento, mas fique a vontade para fazer isso.
 
-### Por que não usar somente o linux?
+## Instalando o Redis
 
-Temos conhecimento de que muitos usuários não querem usar o WSL, pois preferem usar somente o linux, mas devido a outras ferramentas de trabalho, acabamos usando o windows e por esse motivo mantemos nossos treinamentos usando o WSL. Mas se você tem total certeza que não quer usar o WSL, você pode usar o linux diretamente.
+Para abrir o terminal do ubuntu, você deve iniciar ele como um programa normal do seu windows, basta abrir a barra de pesquisa e procurar por ubuntu e abri-lo normalmente. O ubuntu instalado vem sem a interface gráfica, então utilizaremos somente a linha de comando.
 
-### Se eu escolher usar o linux, ainda posso realizar os treinamentos?
+```bash title="Terminal de Comando"
+sudo apt-get update // Atualização do sistema
+sudo apt-get upgrade // Atualização dos pacotes
 
-Sim nós tentamos ao maximo produzir materiais que são uteis para quem usa o WSL e para quem usa somente o linux.
+sudo apt-get install redis-server // Instalação do redis
+
+sudo service redis-server start // Inicia o serviço do redis
+sudo service redis-server status // Verifica se o serviço está rodando
+```
+
+![1° Passo](https://i.imgur.com/SYBnfTV.png)
+![2° Passo](https://i.imgur.com/aXEdsO9.png)
+![3° Passo](https://i.imgur.com/fiHT6bw.png)
+![4° Passo](https://i.imgur.com/t0X0H6D.png)
+
+### Definindo uma senha no redis
+
+Precisamos definir uma senha de acesso no redis, para isso abra o arquivo de configuração do redis e siga os passos a seguir:
+
+:::tip Dica
+Para procurar por alguma palavra usando o **nano** você pode usar o comando **Ctrl+W**.
+:::
+
+```bash title="Terminal de Comando"
+sudo nano /etc/redis/redis.conf
+```
+
+- Procure por **# requirepass** e substitua por: **requirepass 123456**(por exemplo), é importante que você remova o **# (cerquilha)** do inicio da linha.
+
+Após salvar as mudanças reinice o redis, use o comando:
+
+```bash title="Terminal de Comando"
+sudo service redis-server restart
+```
+
+- Se você quiser existem configurações adicionais que podem ser aplicadas ao redis, mas não é necessário para um ambiente de desenvolvimento, as configurações padrões já são o suficiente.
 
 ## Referências
 
-- [Instalar o WSL](https://docs.microsoft.com/pt-br/windows/wsl/install)
+- [Install nginx for ubuntu](https://nginx.org/en/linux_packages.html#Ubuntu)
+
+- [How to set password for redis](https://stackoverflow.com/questions/7537905/how-to-set-password-for-redis)
+
+- [Github/pantheon-systems/nginx](https://github.com/pantheon-systems/nginx)
+
 - [nginx: Linux packages](https://nginx.org/en/linux_packages.html#Ubuntu)
+
 - [Using NGINX and NGINX Plus with Node.js and Socket.IO, the WebSocket API](https://www.nginx.com/blog/nginx-nodejs-websockets-socketio/)
+
 - [Serving Static Content](https://docs.nginx.com/nginx/admin-guide/web-server/serving-static-content/)
+
 - [Nginx -- static file serving confusion with root & alias](https://stackoverflow.com/questions/10631933/nginx-static-file-serving-confusion-with-root-alias)
+
 - [Serving multiple proxy endpoints under location in Nginx](https://serverfault.com/questions/650117/serving-multiple-proxy-endpoints-under-location-in-nginx)
+
 - [Configurando SSL com Nginx](https://www.organicadigital.com/blog/configurando-ssl-com-nginx/)
+
 - [ERROR: Could not find a profile matching 'Nginx Full'](https://stackoverflow.com/questions/57924093/error-could-not-find-a-profile-matching-nginx-full)
+
 - [Get user real ip in nginx behind nginx reverse proxy](https://ypereirareis.github.io/blog/2017/02/15/nginx-real-ip-behind-nginx-reverse-proxy/)
-  > > > > > > > 1788e406bf326d383b66f3c43a05679d747a8b98:versioned_docs/version-1.0.0/development/introduction.md

@@ -1,5 +1,5 @@
 ---
-sidebar_label: 🏷 Repositórios do projeto
+sidebar_label: 💡 Sobre
 ---
 
 # 🏷 Como funciona o repositório do projeto?

@@ -22,35 +22,12 @@ const sidebars = {
     {
       type: "category",
       label: "📝 Iniciando",
-      collapsed: false,
+      collapsed: true,
       items: [
         {
           type: "doc",
           id: "development/introduction"
-        },
-        {
-          type: "doc",
-          id: "development/nginx-portproxy"
         }
-      ]
-    },
-    {
-      type: "category",
-      label: "📝 Visual Studio Code",
-      collapsed: false,
-      items: [
-        {
-          type: "doc",
-          id: "development/vscode/introduction"
-        },
-        {
-          type: "doc",
-          id: "development/vscode/configuration"
-        },
-        {
-          type: "doc",
-          id: "development/vscode/remote"
-        },
       ]
     },
     {
@@ -66,13 +43,32 @@ const sidebars = {
       id: "development/ffmpeg"
     },
     {
-      type: "doc",
-      id: "development/repositories"
+      type: "category",
+      label: "📁 Repositórios Oficiais",
+      collapsed: true,
+      items: [
+        {
+          type: "doc",
+          id: "development/repositories/about"
+        },
+        {
+          type: "doc",
+          id: "development/repositories/backend"
+        },
+        {
+          type: "doc",
+          id: "development/repositories/frontend"
+        },
+        {
+          type: "doc",
+          id: "development/repositories/documentation"
+        },
+      ]
     },
     {
       type: "category",
-      label: "📝 MongoDB",
-      collapsed: false,
+      label: "🧾 MongoDB",
+      collapsed: true,
       items: [
         {
           type: "doc",

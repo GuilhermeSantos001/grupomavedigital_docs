@@ -84,7 +84,12 @@ const config = {
         disableSwitch: false,
         respectPrefersColorScheme: false
       },
-      hideableSidebar: true,
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: true,
+        }
+      },
       id: 'support_us',
       announcementBar: {
         content: 'A documentação a seguir foi realizada por programadores para programadores. <a target="_blank" rel="noopener noreferrer" href="mailto:suporte@grupomave.com.br?subject=Grupo Mave Digital - Feedback da Documentação&body=Olá, me chamo ... e gostaria de expressar minha opinião sobre a documentação.">Enviar Feedback</a>',
@@ -155,6 +160,9 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: [
+          'powershell',
+        ],
       },
     })
 };
