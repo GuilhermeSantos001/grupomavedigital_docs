@@ -41,6 +41,16 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
+        id: 'docker',
+        path: 'docs/docker',
+        routeBasePath: 'docs/docker',
+        sidebarPath: require.resolve('./sidebarsDocker.js'),
+        editUrl: "https://github.com/GuilhermeSantos001/grupomavedigital_docs/edit/main/",
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
         id: 'env',
         path: 'docs/env',
         routeBasePath: 'docs/env',
@@ -102,7 +112,7 @@ const config = {
       },
       id: 'support_us',
       announcementBar: {
-        content: 'A documentação a seguir foi realizada por programadores para programadores. <a target="_blank" rel="noopener noreferrer" href="mailto:suporte@grupomave.com.br?subject=Grupo Mave Digital - Feedback da Documentação&body=Olá, me chamo ... e gostaria de expressar minha opinião sobre a documentação.">Enviar Feedback</a>',
+        content: 'Documentação realizada pela equipe Lack Zillions Over. <a target="_blank" rel="noopener noreferrer" href="mailto:luizgp120@hotmail.com?subject=Lack Zillions Over - Feedback da Documentação&body=Olá, me chamo ... e gostaria de expressar minha opinião sobre a documentação.">Enviar Feedback</a>',
         backgroundColor: '#fafbfc',
         textColor: '#004a6e',
         isCloseable: false
@@ -128,6 +138,13 @@ const config = {
             position: "left",
             label: "TI",
             docsPluginId: 'it',
+          },
+          {
+            type: "doc",
+            docId: "introduction",
+            position: "left",
+            label: "Docker",
+            docsPluginId: 'docker',
           },
           {
             type: "doc",
